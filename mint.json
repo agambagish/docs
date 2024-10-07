@@ -75,11 +75,13 @@
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Products",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "api-reference/endpoint/products/list",
+        "api-reference/endpoint/products/create",
+        "api-reference/endpoint/products/retrieve",
+        "api-reference/endpoint/products/update",
+        "api-reference/endpoint/products/remove"
       ]
     }
   ],
