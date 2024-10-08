@@ -56,22 +56,50 @@
                     "properties": {
                       "id": {
                         "type": "string",
-                        "maxLength": 30
+                        "maxLength": 30,
+                        "example": "e57dfb44-b0f2-4e68-9a73-217a3393fb7e"
                       },
-                      "title": {
-                        "type": "string"
+                      "name": {
+                        "type": "string",
+                        "example": "Colorful T-shirt"
+                      },
+                      "description": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "isActive": {
+                        "type": "boolean",
+                        "example": true
+                      },
+                      "imageUrl": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "url": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "price": {
+                        "type": "string",
+                        "example": "499.00"
                       },
                       "createdAt": {
-                        "type": "string"
+                        "type": "string",
+                        "example": "2024-10-06T20:45:24.820Z"
                       },
                       "updatedAt": {
                         "type": "string",
-                        "nullable": true
+                        "example": "2024-10-06T20:45:24.820Z"
                       }
                     },
                     "required": [
                       "id",
-                      "title",
+                      "name",
+                      "description",
+                      "isActive",
+                      "imageUrl",
+                      "url",
+                      "price",
                       "createdAt",
                       "updatedAt"
                     ]
@@ -94,13 +122,33 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "title": {
+                  "name": {
                     "type": "string",
                     "minLength": 3
+                  },
+                  "description": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "imageUrl": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "url": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "price": {
+                    "type": "string",
+                    "pattern": "^\\d+(\\.\\d{1,2})?$"
                   }
                 },
                 "required": [
-                  "title"
+                  "name",
+                  "price"
                 ]
               }
             }
@@ -116,22 +164,50 @@
                   "properties": {
                     "id": {
                       "type": "string",
-                      "maxLength": 30
+                      "maxLength": 30,
+                      "example": "e57dfb44-b0f2-4e68-9a73-217a3393fb7e"
                     },
-                    "title": {
-                      "type": "string"
+                    "name": {
+                      "type": "string",
+                      "example": "Colorful T-shirt"
+                    },
+                    "description": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "isActive": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "imageUrl": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "url": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "price": {
+                      "type": "string",
+                      "example": "499.00"
                     },
                     "createdAt": {
-                      "type": "string"
+                      "type": "string",
+                      "example": "2024-10-06T20:45:24.820Z"
                     },
                     "updatedAt": {
                       "type": "string",
-                      "nullable": true
+                      "example": "2024-10-06T20:45:24.820Z"
                     }
                   },
                   "required": [
                     "id",
-                    "title",
+                    "name",
+                    "description",
+                    "isActive",
+                    "imageUrl",
+                    "url",
+                    "price",
                     "createdAt",
                     "updatedAt"
                   ]
@@ -199,7 +275,16 @@
                             "expected": "string",
                             "received": "undefined",
                             "path": [
-                              "title"
+                              "name"
+                            ],
+                            "message": "Required"
+                          },
+                          {
+                            "code": "invalid_type",
+                            "expected": "string",
+                            "received": "undefined",
+                            "path": [
+                              "price"
                             ],
                             "message": "Required"
                           }
@@ -244,22 +329,50 @@
                   "properties": {
                     "id": {
                       "type": "string",
-                      "maxLength": 30
+                      "maxLength": 30,
+                      "example": "e57dfb44-b0f2-4e68-9a73-217a3393fb7e"
                     },
-                    "title": {
-                      "type": "string"
+                    "name": {
+                      "type": "string",
+                      "example": "Colorful T-shirt"
+                    },
+                    "description": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "isActive": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "imageUrl": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "url": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "price": {
+                      "type": "string",
+                      "example": "499.00"
                     },
                     "createdAt": {
-                      "type": "string"
+                      "type": "string",
+                      "example": "2024-10-06T20:45:24.820Z"
                     },
                     "updatedAt": {
                       "type": "string",
-                      "nullable": true
+                      "example": "2024-10-06T20:45:24.820Z"
                     }
                   },
                   "required": [
                     "id",
-                    "title",
+                    "name",
+                    "description",
+                    "isActive",
+                    "imageUrl",
+                    "url",
+                    "price",
                     "createdAt",
                     "updatedAt"
                   ]
@@ -389,9 +502,28 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "title": {
+                  "name": {
                     "type": "string",
                     "minLength": 3
+                  },
+                  "description": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "imageUrl": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "url": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "price": {
+                    "type": "string",
+                    "pattern": "^\\d+(\\.\\d{1,2})?$"
                   }
                 }
               }
@@ -408,22 +540,50 @@
                   "properties": {
                     "id": {
                       "type": "string",
-                      "maxLength": 30
+                      "maxLength": 30,
+                      "example": "e57dfb44-b0f2-4e68-9a73-217a3393fb7e"
                     },
-                    "title": {
-                      "type": "string"
+                    "name": {
+                      "type": "string",
+                      "example": "Colorful T-shirt"
+                    },
+                    "description": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "isActive": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "imageUrl": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "url": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "price": {
+                      "type": "string",
+                      "example": "499.00"
                     },
                     "createdAt": {
-                      "type": "string"
+                      "type": "string",
+                      "example": "2024-10-06T20:45:24.820Z"
                     },
                     "updatedAt": {
                       "type": "string",
-                      "nullable": true
+                      "example": "2024-10-06T20:45:24.820Z"
                     }
                   },
                   "required": [
                     "id",
-                    "title",
+                    "name",
+                    "description",
+                    "isActive",
+                    "imageUrl",
+                    "url",
+                    "price",
                     "createdAt",
                     "updatedAt"
                   ]
